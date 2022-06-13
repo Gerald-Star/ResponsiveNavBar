@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Roboto:wght@100;300;400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #262626;
+}
+
+li {
+    list-style: none;
+    text-decoration: none;
+}
+
+
+a {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+.navbar {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px; /* makes the link not to be together */
+}
+
+/* styling the brand logo */
+
+.nav-branding {
+    font-size: 2rem;
+}
+
+/*styling transition effect */
+.nav-link {
+    transition: 0.7s ease;
+    /* nav-menu li a same as this */
+}
+
+.nav-menu li a:hover {
+    color: dodgerblue;
+}
+
+
+/* styling hamburger menu */
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: color;
+}
+
+/* styling hamburger menu */
+@media(max-width: 780px) {
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2){ /* active this class with js*/
+    
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg); /* this styles the 
+        hamgurger menu on how it opens  */
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column; /* makes the menu to appear on the column*/
+        background-color: #262626;
+        width: 100%; /* makes the menu take the whole screen */
+        text-align: center;
+        transition: 0.3s;  /* makes it to to 0.3s to appear on the screen*/
+    }
+    .nav-item {
+        margin: 16px 0;
+    }
+
+    .nav-menu.active {  /* activating this with JS*/
+        left: 0;
+    }
+}
